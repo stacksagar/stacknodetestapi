@@ -19,10 +19,10 @@ app.post("/", async function (req, res, next) {
   extracted_images = [];
   extracted_json_data = null;
 
-  pdfUtil.pdfToText("./uploads/doc.pdf", {}, (a, b) => {
-    console.log("a ", a);
-    console.log("b ", b);
-  });
+  // pdfUtil.pdfToText("./uploads/doc.pdf", {}, (a, b) => {
+  //   console.log("a ", a);
+  //   console.log("b ", b);
+  // });
 
   // pdfUtil.pdfToText(`./uploads/doc.pdf`, async (err2, data) => {
 
