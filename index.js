@@ -76,7 +76,9 @@ app.post("/", function (req, res, next) {
                 const resp = await result[i];
                 const fileContents = new Buffer.from(resp, "base64");
                 const file_name = `${Math.random().toString().slice(2)}.jpg`;
-                extracted_images.push(`http://localhost:2000/${file_name}`);
+                extracted_images.push(
+                  `https://stacknodetestapi.herokuapp.com/${file_name}`
+                );
                 fs.writeFile(`uploads/${file_name}`, fileContents, (err) => {});
               });
             }

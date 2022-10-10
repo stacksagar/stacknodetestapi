@@ -28,7 +28,8 @@ app.post("/", function (req, res, next) {
     // pdfUtil.pdfToText(`./uploads/${pdf_file_name}.pdf`, async (err2, data) => {
     res.json({
       message: "server is running!",
-      uploaded_file_name: `http://localhost:1000/` + uploaded_file_name,
+      uploaded_file_name:
+        `https://stacknodetestapi.herokuapp.com/` + uploaded_file_name,
     });
     // });
   });
