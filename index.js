@@ -76,7 +76,7 @@ app.post("/", function (req, res, next) {
                 const resp = await result[i];
                 const fileContents = new Buffer.from(resp, "base64");
                 const file_name = `${Math.random().toString().slice(2)}.jpg`;
-                extracted_images.push(`http://localhost:1000/${file_name}`);
+                extracted_images.push(`http://localhost:2000/${file_name}`);
                 fs.writeFile(`uploads/${file_name}`, fileContents, (err) => {});
               });
             }
@@ -94,7 +94,7 @@ app.get("/get_extracted_data", (req, res) => {
   res.json({ ...extracted_json_data, extracted_images });
 });
 
-const PORT = process.env.PORT || 1000;
+const PORT = process.env.PORT || 2000;
 
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
