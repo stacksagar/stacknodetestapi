@@ -12,12 +12,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.1.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "multer": "^1.4.5-lts.1",
     "pdf-lib": "^1.17.1",
+    "pdf-text-extract": "^1.5.0",
     "pdf-to-text": "^0.0.7",
-    "stream-mime-type": "^1.0.2"
+    "pdf.js-extract": "^0.2.0",
+    "stream-mime-type": "^1.0.2",
+    "text-from-pdf": "^1.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
