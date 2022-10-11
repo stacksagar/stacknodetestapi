@@ -4,6 +4,7 @@ const app = express();
 const multer = require("multer");
 const pdfUtil = require("pdf-to-text");
 const { PDFDocument } = require("pdf-lib");
+const request = require("request");
 const fs = require("fs");
 const { getMimeType } = require("stream-mime-type");
 
@@ -95,7 +96,24 @@ app.get("/get_extracted_data", (req, res) => {
 });
 
 app.get("/test", (req, res) => {
-  res.json({ message: "ok!" });
+  const options = {
+    method: "POST",
+    url: "https://selectpdf.com/api2/pdftotext/",
+    headers: {
+      "Content-Type":
+        "multipart/form-data; boundary=---011000010111000001101001",
+    },
+    formData: {
+      key: "083421a4-77aa-4adf-ad7e-d1afe7e92a8e",
+      url: "https://nodeserver.joblessbd.com/doc.pdf",
+    },
+  };
+
+  request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+
+    res.json({ body });
+  });
 });
 
 const PORT = process.env.PORT || 2000;

@@ -20,6 +20,7 @@
     "pdf-text-extract": "^1.5.0",
     "pdf-to-text": "^0.0.7",
     "pdf.js-extract": "^0.2.0",
+    "request": "^2.88.2",
     "stream-mime-type": "^1.0.2",
     "text-from-pdf": "^1.1.1"
   },
